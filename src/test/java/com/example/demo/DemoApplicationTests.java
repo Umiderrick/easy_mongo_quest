@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 @SuppressWarnings("ALL")
@@ -66,7 +67,10 @@ public class DemoApplicationTests {
         Item itemC =new Item(3,1,"C","广州",0);
         Item itemD =new Item(4,1,"D","成都",0);
         List<Item> items = Arrays.asList(itemA, itemB, itemC, itemD);
-        itemRepo.saveAll(items);
+//        items.remove(3);
+//        ExecutorService threadPoolExecutor = Executors.newSingleThreadExecutor();
+//        ThreadLocalRandom random =
+//        itemRepo.saveAll(items);
 
     }
 
@@ -104,5 +108,14 @@ public class DemoApplicationTests {
         answers.add(b);
         SurveyRecord surveyRecord = questionManager.doAnswer(answers,"LS","18610915534");
         System.err.println(JSON.toJSONString(surveyRecord));
+    }
+
+    @Test
+    public void testInteger() {
+        int a =159;
+        int b =159;
+        System.err.println(a==b);
+//        System.err.println(a.equals(b));
+
     }
 }
